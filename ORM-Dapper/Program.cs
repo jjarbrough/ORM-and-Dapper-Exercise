@@ -20,7 +20,11 @@ namespace ORM_Dapper
             //testing the departments get and add
 
             var departmentRepo = new DapperDepartmentRepository(conn);
-            departmentRepo.InsertDepartment("Office Supplies");
+
+            //makes a new department every time its run
+           // departmentRepo.InsertDepartment("Office Supplies");
+
+
             var departments = departmentRepo.GetAllDepartments();
             foreach (var department in departments)
             {
@@ -30,11 +34,28 @@ namespace ORM_Dapper
             //testing the products methods
 
             var productRepo = new DapperProductRepository(conn);
-            productRepo.CreateProduct("Pen", 1.99, 5);
+
+            //creates a product
+            //productRepo.CreateProduct("Pen", 1.99, 5);
+
+            //updates a product
+            //var productToUpdate = productRepo.GetProduct(940);
+            //productToUpdate.Name = "not a pen";
+            //productToUpdate.StockLevel = 656;
+            //productToUpdate.Price = 5.99;
+            //productToUpdate.CategoryID = 4;
+            //productToUpdate.OnSale = true;
+            //productRepo.UpdateProduct(productToUpdate);
+
+            //deletes a product
+            //productRepo.DeleteProduct(940);
+
+            //prints list of products
             var products = productRepo.GetAllProducts();
+
             foreach(var product in products)
             {
-                Console.WriteLine($"{product.Name} | {product.Price} | {product.CategoryID}");
+                Console.WriteLine($"{product.Name} | {product.Price} | {product.CategoryID} | {product.ProductID}");
             }
 
         }
