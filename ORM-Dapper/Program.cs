@@ -22,7 +22,7 @@ namespace ORM_Dapper
             var departmentRepo = new DapperDepartmentRepository(conn);
 
             //makes a new department every time its run
-           // departmentRepo.InsertDepartment("Office Supplies");
+            //departmentRepo.InsertDepartment("Office Supplies");
 
 
             var departments = departmentRepo.GetAllDepartments();
